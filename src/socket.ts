@@ -3,7 +3,7 @@ import { io, Socket } from 'socket.io-client';
 const socketBaseUrl = "https://socket-backend-production.up.railway.app";
 const socketPath = '/admin-panel';
 
-console.log("Socket frontend URL:", socketBaseUrl);
+console.log("Socket backend URL:", socketBaseUrl);
 
 const socket: Socket = io(socketBaseUrl, {
   path: socketPath,
