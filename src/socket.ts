@@ -7,7 +7,7 @@ console.log("Socket backend URL:", socketBaseUrl);
 
 const socket: Socket = io(socketBaseUrl, {
   path: socketPath,
-  transports: ['websocket', 'polling'],
+  // transports: ['websocket', 'polling'],
   reconnection: true,
   reconnectionAttempts: Infinity,
   reconnectionDelay: 1000,
