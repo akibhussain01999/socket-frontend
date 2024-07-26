@@ -1,23 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
 import './App.css';
+// import Hello from './Hello';
+import socket from './socket';
 
-function App() {
+const App: React.FC = () => {
+  useEffect(() => {
+    // Handle any additional socket events here
+    socket.on('some_event', (data) => {
+      console.log('Received some_event:', data);
+    });
+
+    // Cleanup on unmount
+    return () => {
+      socket.off('some_event');
+    };
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {/* <Hello name="World" /> */}
       </header>
     </div>
   );
