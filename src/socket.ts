@@ -6,7 +6,7 @@ const socketPath = '/admin-panel';
 console.log("Socket backend URL:", socketBaseUrl);
 
 const socket: Socket = io(socketBaseUrl, {
-  // path: socketPath,
+  path: socketPath,
    transports: ['websocket', 'polling'],
   reconnection: true,
   reconnectionAttempts: Infinity,
